@@ -1,0 +1,59 @@
+<div class="row">
+  <div class="col-md-8 mx-auto mt-5">
+    <h4 class="text-center mb-4">Registración</h4>
+
+    <form [formGroup]="forma" (ngSubmit)="guardar()">
+
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <input
+            type="text"
+            class="form-control"
+            [class.is-invalid]="nombreInvalido"
+            placeholder="Nombre*"
+            formControlName="nombre">
+            <small class="invalid-feedback">El nombre es obligatorio y debe contener entre 1 y 50 caracteres</small>
+        </div>
+
+        <div class="col-md-6 mb-3">
+           <input
+            type="text"
+            class="form-control"
+            [class.is-invalid]="apellidoInvalido"
+            placeholder="Apellido*"
+            formControlName="apellido">
+            <small class="invalid-feedback">El apellido es obligatorio y debe contener entre 1 y 50 caracteres</small>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <input
+            type="text"
+            class="form-control"
+            [class.is-invalid]="telefonoInvalido"
+            placeholder="Teléfono*"
+            formControlName="telefono">
+            <small class="invalid-feedback">El teléfono debe ser numerico y debe contener entre 5 y 10 digitos</small>
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <input
+            type="email"
+            class="form-control"
+            [class.is-invalid]="correoInvalido"
+            placeholder="Email*"
+            formControlName="correo">
+            <small class="invalid-feedback">El correo es requerido y debe contener @correo.xx </small>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="d-grid">
+          <button type="submit" class="btn btn-primary mt-2">Enviar</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>
